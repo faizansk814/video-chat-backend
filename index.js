@@ -10,6 +10,10 @@ const httpServer = http.createServer(app);
 app.use(express.json());
 app.use(cors())
 
+app.get("/video",(req,res)=>{
+  res.status(200).send({msg:"Start the server"})
+})
+
 const io = new Server(httpServer, {
     cors: {
         origin: '*'
